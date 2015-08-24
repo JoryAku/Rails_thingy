@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @title || "TDC Rules!" %></title>
+    <%= csrf_meta_tags %>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+
+    <%= javascript_include_tag 'application' %>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <%=
+          link_to_unless_current "Enspiral Dev Academy",
+          root_path, class: "navbar-brand" do |label|
+            content_tag(:span, label, class: "navbar-brand")
+          end
+        %>
+            <li><%= link_to_unless_current "About", about_path do
+              content_tag(:span, "About", class: "this-page")
+            end %></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <!-- Begin page content -->
+    <main class="container main" role="main">
+      <%= yield %>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <nav class="pull-right">
+          <%= link_to_unless_current "Privacy policy", privacy_path do |label|
+            content_tag(:span, label, class: "this-page")
+          end %> &middot;
+          <%= link_to_unless_current "Terms of use", terms_path do |label|
+            content_tag(:span, label, class: "this-page")
+          end %>
+        </nav>
+        <p class="text-muted copyright">&copy; 2015 Enspiral Dev Academy. Yeah.</p>
+      </div>
+    </footer>
+
+  </body>
+</html>
