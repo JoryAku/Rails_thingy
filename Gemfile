@@ -18,6 +18,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
 # gem 'unicorn'
+gem 'letter_opener', group: :development
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -33,5 +34,6 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
+  gem 'mongoid', '~> 5.0.0.beta'
 end
 

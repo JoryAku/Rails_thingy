@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'site#index'
 
+  resources :movies
+
   get '/contact' => 'inquiries#new'
   post '/contact' => 'inquiries#create'
 
