@@ -1,7 +1,4 @@
 require 'rails_helper'
-require 'rails_helper'
-
-
 
 RSpec.describe Inquiry, type: :model do
   it 'gets and sets name, email, subject, and message' do
